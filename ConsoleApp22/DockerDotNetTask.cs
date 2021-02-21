@@ -10,7 +10,7 @@ namespace ConsoleApp22
     {
         public async Task ExecuteAsync()
         {
-            var config = new DockerClientConfiguration(new Uri("tcp://yourip"));
+            var config = new DockerClientConfiguration(new Uri("tcp://yourip:2375"));
 
             DockerClient client = config.CreateClient();
 
