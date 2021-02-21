@@ -1,8 +1,9 @@
 #See https://aka.ms/containerfastmode to understand how Visual Studio uses this Dockerfile to build your images for faster debugging.
 
+# Using bionic here but you can use defaut image
 FROM mcr.microsoft.com/dotnet/core/runtime:3.1-bionic AS base
 
-# Instalar Chrome
+# Install Chrome
 RUN apt-get update && apt-get install -y \
 apt-transport-https \
 ca-certificates \
@@ -25,7 +26,7 @@ google-chrome-stable \
 && apt-get purge --auto-remove -y curl \
 && rm -rf /var/lib/apt/lists/*
 
-ENV PESQUISA=
+ENV MYSEARCH="Docker Docs"
 WORKDIR /app
 
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1-bionic AS build
